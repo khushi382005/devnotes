@@ -78,7 +78,7 @@ devnotes/
 
 ## 👤 Author
 
-**Your Name** – Software Development Course Project
+**Khushi** – Software Development Course Project
 
 ## 📄 License
 
