@@ -1,0 +1,13 @@
+{
+  "name": "devnotes",
+  "version": "1.2.0",
+  "description": "DevNotes - Code snippet and quick notes saver",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "latest"
+  }
+}

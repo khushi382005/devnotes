@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevNotes</title>
+  <link id="hlLight" rel="stylesheet" href="vendor/github.min.css">
+  <link id="hlDark" rel="stylesheet" href="vendor/github-dark.min.css" disabled>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">&lt;/&gt;</div>
+      <div>
+        <h1>DevNotes</h1>
+        <p>Snippets &amp; quick notes</p>
+      </div>
+    </div>
+
+    <button id="newBtn" class="btn primary block">＋ New Note</button>
+
+    <div class="side-title">Categories</div>
+    <ul id="categoryList"></ul>
+
+    <div class="side-footer">100% offline · saved on your computer</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="search">
+        <span>🔍</span>
+        <input id="searchBox" type="text" placeholder="Search notes, code or categories...  (Ctrl+K)">
+      </div>
+      <button id="themeBtn" class="btn ghost">🌙 Dark Mode</button>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-icon blue">📝</div>
+        <div><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Notes</div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon purple">📁</div>
+        <div><div class="stat-num" id="statCats">0</div><div class="stat-label">Categories</div></div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon green">⚡</div>
+        <div><div class="stat-num" id="statToday">0</div><div class="stat-label">Added Today</div></div>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <h2 id="listTitle">All Notes</h2>
+      <span id="countLabel" class="muted"></span>
+    </div>
+
+    <section id="notesContainer" class="grid"></section>
+  </main>
+
+  <!-- Add / Edit modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="modalTitle">New Note</h3>
+        <button id="closeBtn" class="icon-btn">✕</button>
+      </div>
+      <label>Title</label>
+      <input id="titleInput" type="text" placeholder="e.g. Binary Search">
+      <div class="row2">
+        <div>
+          <label>Category</label>
+          <input id="categoryInput" type="text" list="catSuggestions" placeholder="e.g. Data Structure">
+          <datalist id="catSuggestions"></datalist>
+        </div>
+        <div>
+          <label>Language</label>
+          <select id="langInput">
+            <option value="auto">Auto-detect</option>
+            <option value="cpp">C++</option>
+            <option value="c">C</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="typescript">TypeScript</option>
+            <option value="csharp">C#</option>
+            <option value="php">PHP</option>
+            <option value="sql">SQL</option>
+            <option value="xml">HTML / XML</option>
+            <option value="css">CSS</option>
+            <option value="bash">Bash / Terminal</option>
+            <option value="json">JSON</option>
+            <option value="plaintext">Plain Text</option>
+          </select>
+        </div>
+      </div>
+      <label>Code / Note</label>
+      <textarea id="codeInput" rows="10" placeholder="Paste your code or write your note here..."></textarea>
+      <div class="draft-note" id="draftNote"></div>
+      <div class="modal-actions">
+        <button id="cancelBtn" class="btn ghost">Cancel</button>
+        <button id="saveBtn" class="btn primary">💾 Save Note</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="vendor/highlight.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
